@@ -23,7 +23,5 @@ This project is a full PyTorch reimplementation of **TabNet**, a deep learning a
 🟡 **Implementation in progress**  
 Architecture design and module testing underway. Initial results expected in April 2025.
 
-## 📌 Notes
 
-This project is part of a portfolio supporting MSc applications in Data Science and Statistical Machine Learning. It reflects an independent effort to understand and reproduce modern ML architectures in detail.
 
