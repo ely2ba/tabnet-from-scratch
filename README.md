@@ -1,27 +1,55 @@
-
 # TabNet from Scratch (In Progress)
 
-This project is a full PyTorch reimplementation of **TabNet**, a deep learning architecture proposed by Google Research in 2019. TabNet introduces a novel approach to modeling tabular data using **sequential attention**, **sparse feature selection**, and **interpretable decision steps**.
+This project is a full PyTorch reimplementation of TabNet, a deep learning architecture for tabular data introduced by Google Research (2019). TabNet leverages sequential attention and sparse feature selection to learn interpretable, high-performing representations from structured inputs.
+
+---
 
 ## 🔍 Objectives
 
-- Reconstruct TabNet architecture from the ground up (Feature Transformer, Attentive Transformer, Sparsemax)
-- Apply model to real-world tabular datasets (e.g. Adult Income)
-- Benchmark performance against traditional models like XGBoost and LightGBM
+- Reconstruct the full TabNet architecture from first principles, including:
+  - Feature Transformer
+  - Attentive Transformer
+  - Sparsemax activation
+- Apply the model to real-world tabular datasets (e.g., Adult Income)
+- Benchmark against traditional models such as XGBoost and LightGBM
 - Visualize learned attention masks and feature importances across decision steps
+
+---
+
+## 🛠️ Features (Planned)
+
+- Modular PyTorch implementation of:
+  - Sparsemax activation
+  - Feature and Attentive Transformers
+  - Multi-step sequential attention flow
+- Benchmarking utilities and training scripts
+- Visual tools for exploring:
+  - Feature masks at each decision step
+  - Attention progression and model interpretability
+
+---
 
 ## 📁 Project Structure (coming soon)
 
-- `notebooks/`: Training & evaluation workflows
-- `src/`: Model implementation
-- `utils/`: Preprocessing and data loading
-- `visuals/`: Attention mask visualizations
-- `README.md`: This document
+```
+tabnet-from-scratch/
+├── src/               Core model implementation
+├── notebooks/         Training and evaluation workflows
+├── utils/             Preprocessing and data loading
+├── visuals/           Attention mask visualizations
+└── README.md          This document
+```
 
-## 🧠 Status
+---
 
-🟡 **Implementation in progress**  
-Architecture design and module testing underway. Initial results expected in April 2025.
+## 🚧 Status
 
+🟡 Implementation in progress.  
+Model architecture design and module testing are underway.  
+Initial experiments and benchmarking expected in April 2025.
 
+---
 
+## 📜 License
+
+MIT
