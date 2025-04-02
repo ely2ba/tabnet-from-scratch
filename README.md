@@ -45,7 +45,7 @@ tabnet-from-scratch/
 ## 🚧 Status
 
 🟡 Implementation in progress.  
-Model architecture design and module testing are underway.  
+✔️ Sparsemax implemented and tested. Core architecture components in progress.
 Initial experiments and benchmarking expected in April 2025.
 
 ---
