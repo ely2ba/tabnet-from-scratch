@@ -1,55 +1,86 @@
-# TabNet from Scratch (In Progress)
+# TabNet from Scratch (PyTorch Implementation)
 
-This project is a full PyTorch reimplementation of TabNet, a deep learning architecture for tabular data introduced by Google Research (2019). TabNet leverages sequential attention and sparse feature selection to learn interpretable, high-performing representations from structured inputs.
+This project is a **complete PyTorch reimplementation** of [TabNet](https://arxiv.org/abs/1908.07442), a deep learning architecture for tabular data introduced by Google Research (2019). Unlike typical MLPs, TabNet uses **sequential attention**, **sparse feature selection**, and **interpretable decision steps** to achieve high performance while maintaining transparency.
 
 ---
 
 ## 🔍 Objectives
 
-- Reconstruct the full TabNet architecture from first principles, including:
-  - Feature Transformer
-  - Attentive Transformer
+- ✅ Reconstruct TabNet from first principles using modular PyTorch.
+- ✅ Implement core components:
   - Sparsemax activation
-- Apply the model to real-world tabular datasets (e.g., Adult Income)
-- Benchmark against traditional models such as XGBoost and LightGBM
-- Visualize learned attention masks and feature importances across decision steps
+  - FeatureTransformer (shared + step-specific layers)
+  - AttentiveTransformer (for sparse attention masks)
+  - Multi-step TabNet decision architecture
+- ✅ Apply to real-world data (Adult Income dataset)
+- ✅ Benchmark against traditional models (XGBoost, LightGBM)
+- 🔜 Add interpretability tools for visualizing feature masks
 
 ---
 
-## 🛠️ Features (Planned)
+## 🛠️ Features
 
-- Modular PyTorch implementation of:
-  - Sparsemax activation
-  - Feature and Attentive Transformers
-  - Multi-step sequential attention flow
-- Benchmarking utilities and training scripts
-- Visual tools for exploring:
-  - Feature masks at each decision step
-  - Attention progression and model interpretability
+- Modular, low-level PyTorch code (no high-level DL wrappers)
+- Sequential attention using Sparsemax (Martins & Astudillo, 2016)
+- End-to-end trainable with classification objective
+- Easily extensible for research or practical experimentation
 
 ---
 
-## 📁 Project Structure (coming soon)
+## 📁 Project Structure
 
 ```
 tabnet-from-scratch/
-├── src/               Core model implementation
-├── notebooks/         Training and evaluation workflows
-├── utils/             Preprocessing and data loading
-├── visuals/           Attention mask visualizations
+├── src/               # Core model components (GLU, Transformers, TabNet)
+├── notebooks/         # Testing and training notebooks
+├── utils/             # (planned) Data loading, metric utilities
+├── visuals/           # (coming soon)
 └── README.md          This document
 ```
 
 ---
 
+## 📈 Results (Adult Income Dataset)
+
+| Model        | Test Accuracy |
+|--------------|----------------|
+| TabNet       | **78.5%**       |
+| XGBoost      | 87.3% (baseline)|
+| LightGBM     | 86.7%           |
+| MLP (2-layer)| 76.4%           |
+
+Note: TabNet is trained from scratch without heavy tuning. With additional regularization, learning rate schedules, and data augmentation (e.g., VIME, mixup), accuracy may improve further.
+
+---
+
+## 🤔 Why This Project Matters
+
+Tabular data underpins critical fields like economics, finance, and healthcare — yet deep learning models often lag behind tree-based methods on structured data.
+
+**TabNet** introduces an elegant solution by blending:
+- **Interpretability** via sparse, step-wise attention
+- **Deep learning flexibility** with sequential feature selection
+- **Gradient-based learning** that works end-to-end on tabular datasets
+
+This project:
+- Helps demystify the inner workings of TabNet for research & education
+- Can serve as a foundation for exploring fairness, multitask learning, or causal inference with neural networks
+- Offers a transparent alternative to black-box tabular models — aligning with needs in fields requiring model explainability
+
+---
+
 ## 🚧 Status
 
-🟡 Implementation in progress.  
-✔️ Sparsemax implemented and tested. Core architecture components in progress.
-Initial experiments and benchmarking expected in April 2025.
+- ✅ Core implementation complete
+- ✅ Basic benchmarking done
+- 🔜 Feature attribution & interpretability tools
+- 🔜 More rigorous comparisons with CatBoost and tabular MLP variants
 
 ---
 
 ## 📜 License
 
-MIT
+This project is licensed under the MIT License. Contributions welcome!
+
+---
+
