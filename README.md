@@ -1,33 +1,36 @@
+
+
 # TabNet from Scratch (PyTorch Implementation)
 
-This project is a **complete PyTorch reimplementation** of [TabNet](https://arxiv.org/abs/1908.07442), a deep learning architecture for tabular data introduced by Google Research (2019). Unlike typical MLPs, TabNet uses **sequential attention**, **sparse feature selection**, and **interpretable decision steps** to achieve high performance while maintaining transparency.
+This project is a **complete PyTorch re-implementation** of [TabNet](https://arxiv.org/abs/1908.07442), a deep-learning architecture for tabular data introduced by Google Research (2019). Unlike typical multilayer perceptrons, TabNet uses **sequential attention**, **sparse feature selection**, and **interpretable decision steps** to achieve high performance while maintaining transparency.
 
 ---
 
-## 🔍 Objectives
+## Objectives
 
-- ✅ Reconstruct TabNet from first principles using modular PyTorch.
-- ✅ Implement core components:
-  - Sparsemax activation
-  - FeatureTransformer (shared + step-specific layers)
-  - AttentiveTransformer (for sparse attention masks)
-  - Multi-step TabNet decision architecture
-- ✅ Apply to real-world data (Adult Income dataset)
-- ✅ Benchmark against traditional models (XGBoost, LightGBM)
-- 🔜 Add interpretability tools for visualizing feature masks
+* Reconstruct TabNet from first principles using modular PyTorch
+* Implement core components:
 
----
-
-## 🛠️ Features
-
-- Modular, low-level PyTorch code (no high-level DL wrappers)
-- Sequential attention using Sparsemax (Martins & Astudillo, 2016)
-- End-to-end trainable with classification objective
-- Easily extensible for research or practical experimentation
+  * Sparsemax activation
+  * FeatureTransformer (shared and step-specific layers)
+  * AttentiveTransformer (for sparse attention masks)
+  * Multi-step TabNet decision architecture
+* Apply the model to real-world data (Adult Income dataset)
+* Benchmark against traditional models (XGBoost, LightGBM)
+* Add interpretability tools for visualizing feature masks (planned)
 
 ---
 
-## 📁 Project Structure
+## Features
+
+* Modular, low-level PyTorch code without high-level wrappers
+* Sequential attention via Sparsemax (Martins & Astudillo, 2016)
+* End-to-end trainable for classification tasks
+* Easily extensible for research or practical experimentation
+
+---
+
+## Project Structure
 
 ```
 tabnet-from-scratch/
@@ -35,52 +38,53 @@ tabnet-from-scratch/
 ├── notebooks/         # Testing and training notebooks
 ├── utils/             # (planned) Data loading, metric utilities
 ├── visuals/           # (coming soon)
-└── README.md          This document
+└── README.md          # This document
 ```
 
 ---
 
-## 📈 Results (Adult Income Dataset)
+## Results: Adult Income Dataset
 
-| Model        | Test Accuracy |
-|--------------|----------------|
-| TabNet       | **78.5%**       |
-| XGBoost      | 87.3% (baseline)|
-| LightGBM     | 86.7%           |
-| MLP (2-layer)| 76.4%           |
+| Model         | Test Accuracy     |
+| ------------- | ----------------- |
+| TabNet        | **78.5 %**        |
+| XGBoost       | 87.3 % (baseline) |
+| LightGBM      | 86.7 %            |
+| MLP (2-layer) | 76.4 %            |
 
-Note: TabNet is trained from scratch without heavy tuning. With additional regularization, learning rate schedules, and data augmentation (e.g., VIME, mixup), accuracy may improve further.
+*Note:* TabNet is trained from scratch without heavy tuning. Accuracy may improve with additional regularization, learning-rate schedules, or data augmentation techniques (e.g., VIME, mixup).
 
 ---
 
-## 🤔 Why This Project Matters
+## Why This Project Matters
 
-Tabular data underpins critical fields like economics, finance, and healthcare — yet deep learning models often lag behind tree-based methods on structured data.
+Tabular data underpins critical fields such as economics, finance, and healthcare, yet deep-learning models often lag behind tree-based methods on structured data.
 
-**TabNet** introduces an elegant solution by blending:
-- **Interpretability** via sparse, step-wise attention
-- **Deep learning flexibility** with sequential feature selection
-- **Gradient-based learning** that works end-to-end on tabular datasets
+**TabNet** offers an elegant solution by blending:
+
+* **Interpretability** through sparse, step-wise attention
+* **Deep-learning flexibility** with sequential feature selection
+* **Gradient-based learning** that works end-to-end on tabular datasets
 
 This project:
-- Helps demystify the inner workings of TabNet for research & education
-- Can serve as a foundation for exploring fairness, multitask learning, or causal inference with neural networks
-- Offers a transparent alternative to black-box tabular models — aligning with needs in fields requiring model explainability
+
+* Demystifies TabNet’s inner workings for research and education
+* Provides a foundation for exploring fairness, multitask learning, or causal inference with neural networks
+* Offers a transparent alternative to black-box tabular models, aligning with domains that require explainability
 
 ---
 
-## 🚧 Status
+## Status
 
-- ✅ Core implementation complete
-- ✅ Basic benchmarking done
-- 🔜 Feature attribution & interpretability tools
-- 🔜 More rigorous comparisons with CatBoost and tabular MLP variants
-
----
-
-## 📜 License
-
-This project is licensed under the MIT License. Contributions welcome!
+* Core implementation complete
+* Basic benchmarking done
+* Feature attribution and interpretability tools in progress
+* More rigorous comparisons with CatBoost and tabular MLP variants planned
 
 ---
 
+## License
+
+This project is licensed under the MIT License. Contributions are welcome!
+
+---
